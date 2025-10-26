@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algonive | Certificate Verification</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="sticky top-0 z-50 flex justify-between items-center px-8 py-4 shadow-md bg-white">
+    <div class="flex items-center">
+      <img src="logo.png" alt="Algonive Logo" style="width: 82%; height:auto; max-width:250px;">
+    </div>
+    <nav class="flex items-center gap-6 text-gray-700 uppercase font-medium text-sm">
+      <a href="index.html" class="hover:text-green-600 transition-colors">Home</a>
+      <a href="about.html" class="hover:text-green-600 transition-colors">About</a>
+      <a href="services.html" class="hover:text-green-600 transition-colors">Services</a>
+      <a href="internship.html" class="hover:text-green-600 transition-colors">Internship</a>
+      <a href="testimonials.html" class="hover:text-green-600 transition-colors">Testimonials</a>
+      <a href="verify.html" class="border-b-2 border-green-600 text-black">Verify</a>
+      <a href="contact.html" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+  </header>
+  <main class="py-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-black mb-4">Certificate Verification</h2>
+      <p class="text-gray-600 mb-8">Enter the Employee ID found on the certificate to verify its authenticity.</p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <input type="text" id="employeeIdInput" placeholder="Enter Employee ID (e.g., AN101)" class="w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        <button onclick="verifyCertificate()" class="bg-green-600 text-white px-8 py-2 rounded-md hover:bg-green-700 transition font-semibold">Verify</button>
+      </div>
+
+      <div id="resultContainer" class="mt-12 p-8 bg-white rounded-lg shadow-lg text-left hidden border-l-4 border-green-600">
+        <h3 class="text-2xl font-bold text-black mb-6">Verification Successful ✅</h3>
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-gray-500">Intern Name</p>
+            <p id="internName" class="text-lg font-semibold"></p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Internship Domain</p>
+            <p id="internDomain" class="text-lg font-semibold"></p>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Certificate Issue Date</p>
+            <p id="issueDate" class="text-lg font-semibold"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="errorContainer" class="mt-12 p-6 bg-red-100 text-red-700 rounded-lg shadow hidden">
+        <p class="font-semibold">Verification Failed. The Certificate ID was not found. Please check the ID and try again.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 Algonive. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // --- NO-CODE DATABASE ---
+    // Simply add new interns here. The key is the Employee ID.
+    const internDatabase = {
+      'AN101': {
+        name: 'Tejas S.',
+        issueDate: '2025-08-15',
+        domain: 'Data Analytics'
+      },
+      'AN102': {
+        name: 'Riya Kapoor',
+        issueDate: '2025-07-20',
+        domain: 'Web Development'
+      },
+      'AN103': {
+        name: 'Ankit Verma',
+        issueDate: '2025-09-01',
+        domain: 'Machine Learning'
+      },
+      'AN104': {
+        name: 'Sneha Nair',
+        issueDate: '2025-08-25',
+        domain: 'App Development'
+      },
+      'AN105': {
+        name: 'Rahul Sharma',
+        issueDate: '2025-09-10',
+        domain: 'Cybersecurity'
+      },
+       'AN106': {
+        name: 'Pawan Singh',
+        issueDate: '2025-09-18',
+        domain: 'Web Development'
+      },
+       'AN107': {
+        name: 'Shruti Gupta',
+        issueDate: '2025-09-22',
+        domain: 'Data Analytics'
+      }
+      // Add more interns here by copying the format above
+    };
+
+    function verifyCertificate() {
+      const inputId = document.getElementById('employeeIdInput').value.trim().toUpperCase();
+      const resultContainer = document.getElementById('resultContainer');
+      const errorContainer = document.getElementById('errorContainer');
+      
+      const internData = internDatabase[inputId];
+
+      if (internData) {
+        // Data found, display it
+        document.getElementById('internName').innerText = internData.name;
+        document.getElementById('internDomain').innerText = internData.domain;
+        document.getElementById('issueDate').innerText = internData.issueDate;
+        
+        resultContainer.classList.remove('hidden');
+        errorContainer.classList.add('hidden');
+      } else {
+        // Data not found, show error
+        resultContainer.classList.add('hidden');
+        errorContainer.classList.remove('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>

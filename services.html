@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Algonive</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    @media (min-width: 768px) {
+      .step-connector { position: relative; }
+      .step-connector::after {
+        content: '';
+        position: absolute;
+        top: 2.5rem; /* Aligns with the center of the 5rem H-20 icon */
+        left: 50%;
+        width: 100%;
+        border-bottom: 2px dashed #d1d5db; /* gray-300 */
+        z-index: 0;
+      }
+      .step-item:last-child .step-connector::after { display: none; }
+    }
+  </style>
+
+</head>
+
+<body class="bg-white text-gray-800" onload="AOS.init()">
+
+  <header id="main-header" class="flex justify-between items-center px-4 md:px-8 py-4 shadow bg-white sticky top-0 z-50 transition-all duration-300 ease-in-out">
+    
+    <div class="flex items-center">
+      <a href="index.html"><img src="logo.png" style="width: 82%; height:auto; max-width:250px;" alt="Algonive Logo"></a>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 uppercase font-medium text-sm">
+      <a href="index.html" class="hover:text-green-600 transition-colors">Home</a>
+      <a href="about.html" class="hover:text-green-600 transition-colors">About</a>
+      <a href="services.html" class="border-b-2 border-green-600 text-black">Services</a>
+      <a href="internship.html" class="hover:text-green-600 transition-colors">Internship</a>
+      <a href="testimonials.html" class="hover:text-green-600 transition-colors">Testimonials</a>
+      <a href="verify.html" class="hover:text-green-600 transition-colors">Verify</a>
+      <a href="contact.html" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg sticky top-0 z-40">
+    <nav class="flex flex-col p-4 space-y-2">
+      <a href="index.html" class="hover:text-green-600 transition-colors p-2">Home</a>
+      <a href="about.html" class="hover:text-green-600 transition-colors p-2">About</a>
+      <a href="services.html" class="border-b-2 border-green-600 text-black p-2">Services</a>
+      <a href="internship.html" class="hover:text-green-600 transition-colors p-2">Internship</a>
+      <a href="testimonials.html" class="hover:text-green-600 transition-colors p-2">Testimonials</a>
+      <a href="verify.html" class="hover:text-green-600 transition-colors p-2">Verify</a>
+      <a href="contact.html" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+  </div>
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center px-8 py-12 md:py-20">
+      <div class="pr-0 md:pr-12" data-aos="fade-right">
+        <h1 class="text-4xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          Services That Build Careers.
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          We provide high-impact learning experiences for students and scalable tech solutions for businesses.
+        </p>
+        <div class="flex gap-4">
+          <a href="internship.html" class="bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors">
+            For Students
+          </a>
+          <a href="contact.html" class="bg-gray-100 text-gray-800 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-colors">
+            For Businesses
+          </a>
+        </div>
+      </div>
+      <div class="mt-12 md:mt-0" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Professional services meeting" class="rounded-lg shadow-xl w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">What We Offer</h2>
+        <p class="text-lg text-gray-600 mt-4">We bridge the gap between education and industry for both individuals and companies.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center text-green-600 mb-4">
+            <ion-icon name="school-outline" class="text-5xl mr-4"></ion-icon>
+            <div>
+              <h3 class="text-sm uppercase font-semibold text-gray-500">For Students & Graduates</h3>
+              <h4 class="text-2xl font-bold text-gray-900">Project-Based Internships</h4>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-6">Our primary service. We provide a complete, end-to-end learning experience that takes you from a learner to a job-ready professional. Gain the skills employers are looking for.</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 text-xl mr-2"></ion-icon>Real-World Portfolio Projects</li>
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 text-xl mr-2"></ion-icon>Expert Mentor Guidance & Feedback</li>
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 text-xl mr-2"></ion-icon>Official Verifiable Certification</li>
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 text-xl mr-2"></ion-icon>Performance-Based Stipends</li>
+          </ul>
+          <a href="internship.html" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">Explore Internships</a>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center text-blue-600 mb-4">
+            <ion-icon name="business-outline" class="text-5xl mr-4"></ion-icon>
+            <div>
+              <h3 class="text-sm uppercase font-semibold text-gray-500">For Businesses & Universities</h3>
+              <h4 class="text-2xl font-bold text-gray-900">Corporate & Ed-Tech Solutions</h4>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-6">Leverage our structured learning models and talent pool to meet your organization's goals. We help you build the skilled workforce you need.</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-blue-500 text-xl mr-2"></ion-icon>Custom Training Bootcamps</li>
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-blue-500 text-xl mr-2"></ion-icon>Talent Pipeline as a Service</li>
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-blue-500 text-xl mr-2"></ion-icon>Outsourced Project Development</li>
+            <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-blue-500 text-xl mr-2"></ion-icon>University Partnership Programs</li>
+          </ul>
+          <a href="contact.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Areas of Expertise</h2>
+        <p class="text-lg text-gray-600 mt-4">We focus on the most in-demand technologies in the industry.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="analytics-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Data Analytics</h3>
+          <p class="text-gray-700">Turning raw data into actionable insights and compelling business stories.</p>
+        </div>
+
+        <div class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="bar-chart-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Data Science</h3>
+          <p class="text-gray-700">Using statistical modeling and algorithms to find hidden patterns in complex data.</p>
+        </div>
+
+        <div class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="logo-python" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Python Programming</h3>
+          <p class="text-gray-700">Leveraging the world's most versatile language for data, web, and automation.</p>
+        </div>
+
+        <div class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="250">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="hardware-chip-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Machine Learning</h3>
+          <p class="text-gray-700">Building intelligent systems that learn from data to make predictions and decisions.</p>
+        </div>
+
+        <div class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="code-slash-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Web Development</h3>
+          <p class="text-gray-700">Creating modern, responsive, and high-performance websites and applications.</p>
+        </div>
+
+        <div class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="logo-java" class="text-3xl"></ion-icon> </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Java Programming</h3>
+          <p class="text-gray-700">Developing robust, scalable, and enterprise-grade applications with Java.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Proven Process</h2>
+        <p class="text-lg text-gray-600 mt-4">We've simplified the path to getting real-world experience.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg step-connector z-10 relative">
+            <ion-icon name="search-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">1. Find Your Track</h3>
+          <p class="text-gray-700">Explore our internships and choose the tech stack and project that excites you the most.</p>
+        </div>
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg step-connector z-10 relative">
+            <ion-icon name="code-slash-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">2. Build Your Project</h3>
+          <p class="text-gray-700">Get access to all materials, tasks, and start building. Our mentors are here to help.</p>
+        </div>
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg step-connector z-10 relative">
+            <ion-icon name="chatbubbles-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">3. Get Expert Feedback</h3>
+          <p class="text-gray-700">Submit your work for review. Our mentors provide detailed, professional feedback to help you improve.</p>
+        </div>
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg z-10 relative">
+            <ion-icon name="ribbon-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">4. Earn Your Certificate</h3>
+          <p class="text-gray-700">After successfully completing your project, receive your official certificate to share on LinkedIn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-8">
+    <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+      <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=128&h=128&fit=crop" alt="Riya Kapoor" class="w-24 h-24 rounded-full mx-auto mb-6 shadow-lg object-cover">
+      <div class="relative">
+        <span class="absolute -top-4 -left-0 md:-left-8 text-8xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+        <p class="text-2xl italic text-gray-700 leading-relaxed z-10 relative">
+          Unlike typical courses, ALGONIVE’s internship felt like real work experience. I built actual web apps, got timely feedback, and even showcased my project in interviews.
+        </p>
+        <span class="absolute -bottom-10 -right-0 md:-right-8 text-8xl text-gray-100 font-extrabold opacity-75 z-0">”</span>
+      </div>
+      <p class="mt-12 text-lg font-semibold text-gray-900">Riya Kapoor</p>
+      <p class="text-md text-gray-600">Web Development Intern</p>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-gray-300 py-12 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Algonive</h4>
+        <p class="text-sm">Bridging the gap between academic theory and real-world industry demands with hands-on internship projects.</p>
+        
+        <h5 class="text-md font-semibold text-white mt-4 mb-2">Our Location</h5>
+        <div class="flex items-start text-sm">
+          <ion-icon name="location-outline" class="text-lg mr-2 flex-shrink-0 mt-1"></ion-icon>
+          <span>
+            Bengaluru, Karnataka 560020<br>
+            India
+          </span>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="internship.html" class="hover:text-white">Internships</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/company/algonive" class="hover:text-white"><ion-icon name="logo-linkedin" class="text-2xl"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <p>&copy; 2025 Algonive. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // --- Mobile Menu Toggle ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
