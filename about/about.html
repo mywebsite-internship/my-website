@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Algonive</title>
+
+  <!-- Using Tailwind 2.x from your original link for consistency -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    @media (min-width: 768px) {
+
+      /* Targets the container for the icon */
+      .step-connector {
+        position: relative;
+      }
+
+      /* Creates the dashed line */
+      .step-connector::after {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        /* Aligns with the center of the 5rem H-20 icon */
+        left: 50%;
+        width: 100%;
+        border-bottom: 2px dashed #d1d5db;
+        /* gray-300 */
+        z-index: 0;
+      }
+
+      /* Hides the connector on the last step */
+      .step-item:last-child .step-connector::after {
+        display: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="bg-white text-gray-800" onload="AOS.init()">
+
+  <!-- === MODIFIED RESPONSIVE HEADER === -->
+  <header id="main-header"
+    class="flex justify-between items-center px-4 md:px-8 py-4 shadow bg-white sticky top-0 z-50 transition-all duration-300 ease-in-out">
+
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/"><img src="logo.png" style="width: 82%; height:auto; max-width:250px;"
+          alt="Algonive Logo"></a>
+    </div>
+
+    <!-- Desktop Navigation (Hidden on mobile) -->
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 uppercase font-medium text-sm">
+      <a href="/" class="hover:text-green-600 transition-colors">Home</a>
+      <a href="/about" class="border-b-2 border-green-600 text-black">About</a>
+      <a href="/services" class="hover:text-green-600 transition-colors">Services</a>
+      <a href="/internship" class="hover:text-green-600 transition-colors">Internship</a>
+      <a href="/testimonials" class="hover:text-green-600 transition-colors">Testimonials</a>
+      <a href="/verify" class="hover:text-green-600 transition-colors">Verify</a>
+      <a href="/contact"
+        class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Visible on mobile) -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <!-- === END OF HEADER === -->
+
+  <!-- === ADDED MOBILE MENU DROPDOWN === -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg sticky top-0 z-40">
+    <nav class="flex flex-col p-4 space-y-2">
+      <a href="/" class="hover:text-green-600 transition-colors p-2">Home</a>
+      <a href="/about" class="border-b-2 border-green-600 text-black p-2">About</a>
+      <a href="/services" class="hover:text-green-600 transition-colors p-2">Services</a>
+      <a href="/internship" class="hover:text-green-600 transition-colors p-2">Internship</a>
+      <a href="/testimonials" class="hover:text-green-600 transition-colors p-2">Testimonials</a>
+      <a href="/verify" class="hover:text-green-600 transition-colors p-2">Verify</a>
+      <a href="/contact"
+        class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+  </div>
+  <!-- === END OF MOBILE MENU === -->
+
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center px-8 py-12 md:py-20">
+      <div class="pr-0 md:pr-12" data-aos="fade-right">
+        <span
+          class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1 rounded-full uppercase tracking-wider mb-4">
+          Start Your Tech Journey
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          We're bridging the gap.
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Algonive was founded on a simple mission: to give every tech student the practical, hands-on experience they
+          need to launch a successful career.
+        </p>
+        <div class="flex gap-4">
+          <a href="/internship"
+            class="bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors">
+            View Internships
+          </a>
+          <a href="#our-story"
+            class="bg-gray-100 text-gray-800 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-colors">
+            Our Story
+          </a>
+        </div>
+      </div>
+      <div class="mt-12 md:mt-0" data-aos="fade-left">
+        <img
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          alt="Team collaborating on a project" class="rounded-lg shadow-xl w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <section id="our-story" class="bg-gray-50 py-20 px-8">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div data-aos="fade-right">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">
+          Our Mission: Your Career Launchpad
+        </h2>
+        <div class="space-y-6 mb-10">
+          <div class="border-l-4 border-green-500 bg-white p-6 rounded-r-lg shadow-sm">
+            <h3 class="font-bold text-xl text-green-800">Our Mission</h3>
+            <p class="italic text-gray-700 mt-2">To bridge the gap between academic theory and real-world industry
+              demands by providing students with affordable, hands-on internship projects guided by expert mentors.</p>
+          </div>
+          <div class="border-l-4 border-blue-500 bg-white p-6 rounded-r-lg shadow-sm">
+            <h3 class="font-bold text-xl text-blue-800">Our Vision</h3>
+            <p class="italic text-gray-700 mt-2">A world where every technology student graduates with the practical
+              experience, portfolio, and confidence needed to excel in their career from day one.</p>
+          </div>
+        </div>
+        <div class="text-gray-700 leading-relaxed space-y-4">
+          <h3 class="font-bold text-2xl text-gray-900 mt-8">Our Story</h3>
+          <p>Algonive was born from a simple but powerful frustration. Like many tech students, our journey was filled
+            with textbooks and lectures, but when it came time to apply for our first real-world jobs, we hit a wall. We
+            saw a huge gap between our classroom knowledge and what companies were actually looking for: practical
+            skills and a portfolio of completed projects.</p>
+          <p>That frustration sparked an idea: <strong>What if we could build the platform we wish we had?</strong> A
+            place where students could stop just learning and start doing.</p>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="100">
+        <img
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+          alt="A group of interns collaborating" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-800 text-white py-16 px-8 relative overflow-hidden"
+    style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 20px 20px;">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center z-10 relative">
+      <div data-aos="fade-up">
+        <h3 id="count-interns" class="text-5xl font-extrabold text-green-400">200+</h3>
+        <p class="text-xl text-gray-300 font-medium mt-2">Interns Trained</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h3 id="count-projects" class="text-5xl font-extrabold text-green-400">50+</h3>
+        <p class="text-xl text-gray-300 font-medium mt-2">Live Projects Completed</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h3 id="count-experience" class="text-5xl font-extrabold text-green-400">2+</h3>
+        <p class="text-xl text-gray-300 font-medium mt-2">Years of Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Core Values</h2>
+        <p class="text-lg text-gray-600 mt-4">The principles that guide our work and our community.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-600 rounded-full mx-auto mb-6">
+            <ion-icon name="rocket-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Practicality First</h3>
+          <p class="text-gray-700">We focus on "learning by doing." Our projects are designed to give you real-world
+            skills, not just theoretical knowledge.</p>
+        </div>
+        <div
+          class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-6">
+            <ion-icon name="school-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Expert Mentorship</h3>
+          <p class="text-gray-700">You're never alone. Our expert mentors guide you through challenges, review your
+            code, and prepare you for a tech career.</p>
+        </div>
+        <div
+          class="text-center p-8 bg-gray-50 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+          data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="flex items-center justify-center h-16 w-16 bg-indigo-100 text-indigo-600 rounded-full mx-auto mb-6">
+            <ion-icon name="people-outline" class="text-3xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Supportive Community</h3>
+          <p class="text-gray-700">Join a network of ambitious peers. Collaborate, share ideas, and grow together in a
+            supportive environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Process: From Learner to Pro</h2>
+        <p class="text-lg text-gray-600 mt-4">We've simplified the path to getting real-world experience.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg step-connector z-10 relative">
+            <ion-icon name="search-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">1. Find Your Track</h3>
+          <p class="text-gray-700">Explore our internships and choose the tech stack and project that excites you the
+            most.</p>
+        </div>
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg step-connector z-10 relative">
+            <ion-icon name="code-slash-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">2. Build Your Project</h3>
+          <p class="text-gray-700">Get access to all materials, tasks, and start building. Our mentors are here to help.
+          </p>
+        </div>
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg step-connector z-10 relative">
+            <ion-icon name="chatbubbles-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">3. Get Expert Feedback</h3>
+          <p class="text-gray-700">Submit your work for review. Our mentors provide detailed, professional feedback to
+            help you improve.</p>
+        </div>
+        <div class="text-center step-item" data-aos="fade-up" data-aos-delay="400">
+          <div
+            class="flex items-center justify-center h-20 w-20 bg-white text-green-600 rounded-full mx-auto mb-4 shadow-lg z-10 relative">
+            <ion-icon name="ribbon-outline" class="text-4xl"></ion-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">4. Earn Your Certificate</h3>
+          <p class="text-gray-700">After successfully completing your project, receive your official certificate to
+            share on LinkedIn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green-600 text-white" data-aos="fade-in">
+    <div class="max-w-5xl mx-auto text-center py-20 px-8">
+      <h2 class="text-4xl font-extrabold mb-4" data-aos="fade-up">Ready to Launch Your Career?</h2>
+      <p class="text-xl text-green-100 mb-10" data-aos="fade-up" data-aos-delay="100">
+        Join hundreds of students who turned their academic knowledge into a professional portfolio with Algonive.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+        <a href="/internship"
+          class="bg-white text-green-700 px-8 py-3 rounded-lg text-lg font-bold hover:bg-gray-100 shadow-lg transition-all transform hover:-translate-y-1">
+          Explore Internships
+        </a>
+        <a href="/contact"
+          class="border-2 border-green-100 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-green-700 transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- === MODIFIED FOOTER WITH ADDRESS === -->
+  <footer class="bg-gray-800 text-gray-300 py-12 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Column 1: About and Address -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Algonive</h4>
+        <p class="text-sm">Bridging the gap between academic theory and real-world industry demands with hands-on
+          internship projects.</p>
+
+        <!-- Added Address -->
+        <h5 class="text-md font-semibold text-white mt-4 mb-2">Our Location</h5>
+        <div class="flex items-start text-sm">
+          <ion-icon name="location-outline" class="text-lg mr-2 flex-shrink-0 mt-1"></ion-icon>
+          <span>
+            Bengaluru, Karnataka 560020<br>
+            India
+          </span>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-white">About Us</a></li>
+          <li><a href="/services" class="hover:text-white">Services</a></li>
+          <li><a href="/internship" class="hover:text-white">Internships</a></li>
+          <li><a href="/contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Follow Us -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/company/algonive" class="hover:text-white"><ion-icon name="logo-linkedin"
+              class="text-2xl"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <p>&copy; 2025 Algonive. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- === END OF FOOTER === -->
+
+
+  <script>
+    // CountUp Script
+    document.addEventListener("DOMContentLoaded", function () {
+      // Check if CountUp is defined before using it
+      if (typeof CountUp !== 'undefined') {
+        const options = {
+          enableScrollSpy: true,
+          scrollSpyDelay: 100,
+        };
+        // Ensure the elements exist before trying to count
+        if (document.getElementById('count-interns')) {
+          new CountUp('count-interns', 200, options).start();
+        }
+        if (document.getElementById('count-projects')) {
+          new CountUp('count-projects', 50, options).start();
+        }
+        if (document.getElementById('count-experience')) {
+          new CountUp('count-experience', 2, options).start();
+        }
+      } else {
+        console.error('CountUp.js script not loaded');
+      }
+    });
+  </script>
+
+  <!-- === ADDED MOBILE MENU SCRIPT === -->
+  <script>
+    // --- Mobile Menu Toggle ---
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function () {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
