@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Algonive</title>
+  
+  <!-- Using Tailwind 2.x for consistency -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+  
+  <!-- Added Icon Scripts for footer -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- === MODIFIED RESPONSIVE HEADER === -->
+  <header id="main-header" class="flex justify-between items-center px-4 md:px-8 py-4 shadow bg-white sticky top-0 z-50 transition-all duration-300 ease-in-out">
+    
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/"><img src="logo.png" style="width: 82%; height:auto; max-width:250px;" alt="Algonive Logo"></a>
+    </div>
+
+    <!-- Desktop Navigation (Hidden on mobile) -->
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 uppercase font-medium text-sm">
+      <a href="/" class="hover:text-green-600 transition-colors">Home</a>
+      <a href="/about" class="hover:text-green-600 transition-colors">About</a>
+      <a href="/services" class="hover:text-green-600 transition-colors">Services</a>
+      <a href="/internship" class="hover:text-green-600 transition-colors">Internship</a>
+      <a href="/testimonials" class="hover:text-green-600 transition-colors">Testimonials</a>
+      <a href="/verify" class="hover:text-green-600 transition-colors">Verify</a>
+      <a href="/contact" class="border-b-2 border-green-600 text-black">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Visible on mobile) -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <!-- === END OF HEADER === -->
+
+  <!-- === ADDED MOBILE MENU DROPDOWN === -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg sticky top-0 z-40">
+    <nav class="flex flex-col p-4 space-y-2">
+      <a href="/" class="hover:text-green-600 transition-colors p-2">Home</a>
+      <a href="/about" class="hover:text-green-600 transition-colors p-2">About</a>
+      <a href="/services" class="hover:text-green-600 transition-colors p-2">Services</a>
+      <a href="/internship" class="hover:text-green-600 transition-colors p-2">Internship</a>
+      <a href="/testimonials" class="hover:text-green-600 transition-colors p-2">Testimonials</a>
+      <a href="/verify" class="hover:text-green-600 transition-colors p-2">Verify</a>
+      <a href="/contact" class="border-b-2 border-green-600 text-black p-2">Contact</a>
+    </nav>
+  </div>
+  <!-- === END OF MOBILE MENU === -->
+
+  <!-- Contact Section -->
+  <section class="max-w-5xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-12">Get in Touch</h2>
+    <p class="text-lg text-gray-600 mb-12">
+      Reach out to us via WhatsApp, LinkedIn, or Email. We’d love to connect with you!
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- WhatsApp -->
+      <a href="https://wa.me/917834847081" target="_blank" 
+         class="flex flex-col items-center bg-green-50 p-8 rounded-lg shadow hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-12 mb-4">
+        <h3 class="font-bold text-lg text-green-700">WhatsApp</h3>
+        <p class="text-gray-600">+91 7834847081</p>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/company/algonive" target="_blank" 
+         class="flex flex-col items-center bg-blue-50 p-8 rounded-lg shadow hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="h-12 mb-4">
+        <h3 class="font-bold text-lg text-blue-700">LinkedIn</h3>
+        <p class="text-gray-600">Visit Company Profile</p>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:services.algonivetech@gmail.com" 
+         class="flex flex-col items-center bg-gray-50 p-8 rounded-lg shadow hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="h-12 mb-4">
+        <h3 class="font-bold text-lg text-gray-700">Email</h3>
+        <p class="text-gray-600">services.algonivetech@gmail.com</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- === MODIFIED FOOTER WITH ADDRESS === -->
+  <footer class="bg-gray-800 text-gray-300 py-12 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Column 1: About and Address -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Algonive</h4>
+        <p class="text-sm">Bridging the gap between academic theory and real-world industry demands with hands-on internship projects.</p>
+        
+        <!-- Added Address -->
+        <h5 class="text-md font-semibold text-white mt-4 mb-2">Our Location</h5>
+        <div class="flex items-start text-sm">
+          <ion-icon name="location-outline" class="text-lg mr-2 flex-shrink-0 mt-1"></ion-icon>
+          <span>
+            Bengaluru, Karnataka 560020<br>
+            India
+          </span>
+        </div>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-white">About Us</a></li>
+          <li><a href="/services" class="hover:text-white">Services</a></li>
+          <li><a href="/internship" class="hover:text-white">Internships</a></li>
+          <li><a href="/contact" class_name="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3: Follow Us -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/company/algonive" class="hover:text-white"><ion-icon name="logo-linkedin" class="text-2xl"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <p>&copy; 2025 Algonive. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- === END OF FOOTER === -->
+
+  <!-- === ADDED MOBILE MENU SCRIPT === -->
+  <script>
+    // --- Mobile Menu Toggle ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
