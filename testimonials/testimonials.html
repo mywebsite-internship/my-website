@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials | Algonive</title>
+  
+  <!-- Using Tailwind 2.x from your original link for consistency -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="bg-white text-gray-800" onload="AOS.init()">
+
+  <!-- === MODIFIED RESPONSIVE HEADER === -->
+  <header id="main-header" class="flex justify-between items-center px-4 md:px-8 py-4 shadow bg-white sticky top-0 z-50 transition-all duration-300 ease-in-out">
+    
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/"><img src="logo.png" style="width: 82%; height:auto; max-width:250px;" alt="Algonive Logo"></a>
+    </div>
+
+    <!-- Desktop Navigation (Hidden on mobile) -->
+    <nav class="hidden md:flex items-center gap-6 text-gray-700 uppercase font-medium text-sm">
+      <a href="/" class="hover:text-green-600 transition-colors">Home</a>
+      <a href="/about" class="hover:text-green-600 transition-colors">About</a>
+      <a href="/services" class="hover:text-green-600 transition-colors">Services</a>
+      <a href="/internship" class="hover:text-green-600 transition-colors">Internship</a> <!-- Corrected link -->
+      <a href="/testimonials" class="border-b-2 border-green-600 text-black">Testimonials</a>
+      <a href="/verify" class="hover:text-green-600 transition-colors">Verify</a>
+      <a href="/contact" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Visible on mobile) -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <!-- === END OF HEADER === -->
+
+  <!-- === ADDED MOBILE MENU DROPDOWN === -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg sticky top-0 z-40">
+    <nav class="flex flex-col p-4 space-y-2">
+      <a href="/" class="hover:text-green-600 transition-colors p-2">Home</a>
+      <a href="/about" class="hover:text-green-600 transition-colors p-2">About</a>
+      <a href="/services" class="hover:text-green-600 transition-colors p-2">Services</a>
+      <a href="/internship" class="hover:text-green-600 transition-colors p-2">Internship</a> <!-- Corrected link -->
+      <a href="/testimonials" class="border-b-2 border-green-600 text-black p-2">Testimonials</a>
+      <a href="/verify" class="hover:text-green-600 transition-colors p-2">Verify</a>
+      <a href="/contact" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
+    </nav>
+  </div>
+  <!-- === END OF MOBILE MENU === -->
+
+  <section class="relative bg-gray-800 text-white py-32 px-8" data-aos="fade-in">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=1600&h=800&q=80" alt="Our Team" class="w-full h-full object-cover opacity-30">
+      <div class="absolute inset-0 bg-gray-900 opacity-60"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4" data-aos="fade-up">What Our Interns Say</h1>
+      <p class="text-xl md:text-2xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
+        Real stories from students who built their skills and launched their careers with Algonive.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gray-900" data-aos="fade-up">Don't Just Take Our Word For It</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-5">
+            <img class="w-16 h-16 rounded-full object-cover mr-4 shadow-md" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=80" alt="Tejas S">
+            <div>
+              <p class="font-bold text-lg text-gray-900">Tejas S.</p>
+              <p class="text-sm text-green-600 font-semibold">Data Analytics Intern</p>
+            </div>
+          </div>
+          <div class="relative flex-grow">
+            <span class="absolute -top-4 -left-3 text-6xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+            <p class="italic text-gray-700 z-10 relative">
+              ALGONIVE gave me the opportunity to work on real-world projects that challenged and improved my skills. The mentorship and guidance I received were incredibly valuable.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-5">
+            <img class="w-16 h-16 rounded-full object-cover mr-4 shadow-md" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=80" alt="Riya Kapoor">
+            <div>
+              <p class="font-bold text-lg text-gray-900">Riya Kapoor</p>
+              <p class="text-sm text-green-600 font-semibold">Web Development Intern</p>
+            </div>
+          </div>
+          <div class="relative flex-grow">
+            <span class="absolute -top-4 -left-3 text-6xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+            <p class="italic text-gray-700 z-10 relative">
+              Unlike typical courses, ALGONIVE’s internship felt like real work experience. I built actual web apps, got timely feedback, and even showcased my project in interviews.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center mb-5">
+            <img class="w-16 h-16 rounded-full object-cover mr-4 shadow-md" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=80" alt="Ankit Verma">
+            <div>
+              <p class="font-bold text-lg text-gray-900">Ankit Verma</p>
+              <p class="text-sm text-green-600 font-semibold">Machine Learning Intern</p>
+            </div>
+          </div>
+          <div class="relative flex-grow">
+            <span class="absolute -top-4 -left-3 text-6xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+            <p class="italic text-gray-700 z-10 relative">
+              The live projects and personalized mentor support at ALGONIVE were amazing. I got to explore machine learning techniques that I only read about in college.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-5">
+            <img class="w-16 h-16 rounded-full object-cover mr-4 shadow-md" src="https://img.freepik.com/premium-photo/generative-ai-image-beautiful-indian-girl-working-office_467541-5582.jpg" alt="Sneha Nair">
+            <div>
+              <p class="font-bold text-lg text-gray-900">Sneha Nair</p>
+              <p class="text-sm text-green-600 font-semibold">App Development Intern</p>
+            </div>
+          </div>
+          <div class="relative flex-grow">
+            <span class="absolute -top-4 -left-3 text-6xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+            <p class="italic text-gray-700 z-10 relative">
+              ALGONIVE made learning practical and exciting. I was able to build a working app within weeks and collaborate with a team just like in a real company.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-5">
+            <img class="w-16 h-16 rounded-full object-cover mr-4 shadow-md" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=128&h=128&q=80" alt="Rahul Sharma">
+            <div>
+              <p class="font-bold text-lg text-gray-900">Rahul Sharma</p>
+              <p class="text-sm text-green-600 font-semibold">Cybersecurity Intern</p>
+            </div>
+          </div>
+          <div class="relative flex-grow">
+            <span class="absolute -top-4 -left-3 text-6xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+            <p class="italic text-gray-700 z-10 relative">
+              What I loved most is that they treat you like a professional from day one. The tasks were meaningful, the learning curve was real, and the mentors were always available.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center mb-5">
+            <img class="w-16 h-16 rounded-full object-cover mr-4 shadow-md" src="https://static.vecteezy.com/system/resources/previews/039/334/802/non_2x/ai-generated-indian-female-student-free-photo.jpg" alt="Shruti Gupta">
+            <div>
+              <p class="font-bold text-lg text-gray-900">Shruti Gupta</p>
+              <p class="text-sm text-green-600 font-semibold">Data Analytics Intern</p>
+            </div>
+          </div>
+          <div class="relative flex-grow">
+            <span class="absolute -top-4 -left-3 text-6xl text-gray-100 font-extrabold opacity-75 z-0">“</span>
+            <p class="italic text-gray-700 z-10 relative">
+              ALGONIVE gave me the opportunity to work on real-world projects that challenged and improved my skills. The mentorship and guidance I received were incredibly valuable.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green-600 text-white" data-aos="fade-in">
+    <div class="max-w-5xl mx-auto text-center py-20 px-8">
+      <h2 class="text-4xl font-extrabold mb-4" data-aos="fade-up">Ready to Launch Your Career?</h2>
+      <p class="text-xl text-green-100 mb-10" data-aos="fade-up" data-aos-delay="100">
+        Join hundreds of students like these who turned their academic knowledge into a professional portfolio.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+        <a href="/internship" class="bg-white text-green-700 px-8 py-3 rounded-lg text-lg font-bold hover:bg-gray-100 shadow-lg transition-all transform hover:-translate-y-1">
+          Explore Internships
+        </a>
+        <a href="/contact" class="border-2 border-green-100 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-green-700 transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- === MODIFIED FOOTER WITH ADDRESS === -->
+  <footer class="bg-gray-800 text-gray-300 py-12 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Column 1: About and Address -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Algonive</h4>
+        <p class="text-sm">Bridging the gap between academic theory and real-world industry demands with hands-on internship projects.</p>
+        
+        <!-- Added Address -->
+        <h5 class="text-md font-semibold text-white mt-4 mb-2">Our Location</h5>
+        <div class="flex items-start text-sm">
+          <ion-icon name="location-outline" class="text-lg mr-2 flex-shrink-0 mt-1"></ion-icon>
+          <span>
+            Bengaluru, Karnataka 560020<br>
+            India
+          </span>
+        </div>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-white">About Us</a></li>
+          <li><a href="/services" class="hover:text-white">Services</a></li>
+          <li><a href="/internship" class="hover:text-white">Internships</a></li>
+          <li><a href="/contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3: Follow Us -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/company/algonive" class="hover:text-white"><ion-icon name="logo-linkedin" class="text-2xl"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+      <p>&copy; 2025 Algonive. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- === END OF FOOTER === -->
+
+  <!-- === ADDED MOBILE MENU SCRIPT === -->
+  <script>
+    // --- Mobile Menu Toggle ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
