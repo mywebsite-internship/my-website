@@ -58,7 +58,7 @@
       <p class="text-gray-600 mb-8">Enter the Intern ID found on the certificate to verify its authenticity.</p>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <input type="text" id="employeeIdInput" placeholder="Enter Intern ID" class="w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        <input type="text" id="intern_id" placeholder="Enter Intern ID" class="w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
         <button onclick="verifyCertificate()" class="bg-green-600 text-white px-8 py-2 rounded-md hover:bg-green-700 transition font-semibold">Verify</button>
       </div>
 
@@ -67,15 +67,15 @@
         <div class="space-y-4">
           <div>
             <p class="text-sm text-gray-500">Intern Name</p>
-            <p id="internName" class="text-lg font-semibold"></p>
+            <p id="name" class="text-lg font-semibold"></p>
           </div>
           <div>
             <p class="text-sm text-gray-500">Internship Domain</p>
-            <p id="internDomain" class="text-lg font-semibold"></p>
+            <p id="domain" class="text-lg font-semibold"></p>
           </div>
           <div>
             <p class="text-sm text-gray-500">Certificate Issue Date</p>
-            <p id="issueDate" class="text-lg font-semibold"></p>
+            <p id="issue_date" class="text-lg font-semibold"></p>
           </div>
         </div>
       </div>
@@ -162,6 +162,7 @@
     }
   });
 </script>
+
 
 
 
