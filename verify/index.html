@@ -1,174 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algonive | Certificate Verification</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1623483725883615"
-     crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-<link rel="manifest" href="/assets/site.webmanifest" />
-<meta name="theme-color" content="#ffffff" />
-</head>
-<body class="bg-gray-50 text-gray-800">
+<script>
+  // ===== CONFIG =====
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_ID/exec'; // <-- replace
 
-  <header class="sticky top-0 z-50 bg-white shadow-md relative">
-    <div class="flex justify-between items-center px-4 sm:px-8 py-4">
-      <div class="flex items-center">
-        <img src="logo.png" alt="Algonive Logo" style="width: 82%; height:auto; max-width:250px;">
-      </div>
+  // ===== UI helpers =====
+  const el = id => document.getElementById(id);
+  const show = elNode => elNode.classList.remove('hidden');
+  const hide = elNode => elNode.classList.add('hidden');
 
-      <nav class="hidden md:flex items-center gap-6 text-gray-700 uppercase font-medium text-sm">
-        <a href="/" class="hover:text-green-600 transition-colors">Home</a>
-        <a href="/about" class="hover:text-green-600 transition-colors">About</a>
-        <a href="/services" class="hover:text-green-600 transition-colors">Services</a>
-        <a href="/internship" class="hover:text-green-600 transition-colors">Internship</a>
-        <a href="/testimonials" class="hover:text-green-600 transition-colors">Testimonials</a>
-        <a href="/verify" class="border-b-2 border-green-600 text-black">Verify</a>
-        <a href="/contact" class="bg-green-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
-      </nav>
+  async function verifyCertificate() {
+    const inputEl = el('employeeIdInput');
+    const idRaw = inputEl.value.trim();
+    const id = idRaw.toUpperCase();
+    const resultContainer = el('resultContainer');
+    const errorContainer = el('errorContainer');
+    const errorMessage = el('errorMessage');
 
-      <button id="mobile-menu-button" class="md:hidden p-2 text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
+    // clear previous
+    hide(resultContainer);
+    hide(errorContainer);
+    if (errorMessage) errorMessage.innerText = '';
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
-      <nav class="flex flex-col p-4 gap-2">
-        <a href="/" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-green-50 hover:text-green-600">Home</a>
-        <a href="/about" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-green-50 hover:text-green-600">About</a>
-        <a href="/services" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-green-50 hover:text-green-600">Services</a>
-        <a href="/internship" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-green-50 hover:text-green-600">Internship</a>
-        <a href="/testimonials" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-green-50 hover:text-green-600">Testimonials</a>
-        <a href="/verify" class="block px-3 py-2 rounded-md bg-green-50 text-black font-semibold">Verify</a>
-        <a href="/contact" class="block bg-green-600 text-white text-center px-5 py-2 mt-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="py-20 px-6 text-center">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-black mb-4">Certificate Verification</h2>
-      <p class="text-gray-600 mb-8">Enter the Intern ID found on the certificate to verify its authenticity.</p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <input type="text" id="employeeIdInput" placeholder="Enter Intern ID" class="w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-        <button onclick="verifyCertificate()" class="bg-green-600 text-white px-8 py-2 rounded-md hover:bg-green-700 transition font-semibold">Verify</button>
-      </div>
-
-      <div id="resultContainer" class="mt-12 p-8 bg-white rounded-lg shadow-lg text-left hidden border-l-4 border-green-600">
-        <h3 class="text-2xl font-bold text-black mb-6">Verification Successful ✅</h3>
-        <div class="space-y-4">
-          <div>
-            <p class="text-sm text-gray-500">Intern Name</p>
-            <p id="internName" class="text-lg font-semibold"></p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-500">Internship Domain</p>
-            <p id="internDomain" class="text-lg font-semibold"></p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-500">Certificate Issue Date</p>
-            <p id="issueDate" class="text-lg font-semibold"></p>
-          </div>
-        </div>
-      </div>
-
-      <div id="errorContainer" class="mt-12 p-6 bg-red-100 text-red-700 rounded-lg shadow hidden">
-        <p class="font-semibold">Verification Failed. The Certificate ID was not found. Please check the ID and try again.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer class="bg-gray-800 text-white text-center py-4 mt-12">
-    <p>&copy; 2025 Algonive. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // --- NO-CODE DATABASE ---
-    // Simply add new interns here. The key is the Employee ID.
-    const internDatabase = {
-      'AN101': {
-        name: 'Tejas S.',
-        issueDate: '2025-08-15',
-        domain: 'Data Analytics'
-      },
-      'AN102': {
-        name: 'Riya Kapoor',
-        issueDate: '2025-07-20',
-        domain: 'Web Development'
-      },
-      'AN103': {
-        name: 'Ankit Verma',
-        issueDate: '2025-09-01',
-        domain: 'Machine Learning'
-      },
-      'AN104': {
-        name: 'Sneha Nair',
-        issueDate: '2025-08-25',
-        domain: 'App Development'
-      },
-      'AN105': {
-        name: 'Rahul Sharma',
-        issueDate: '2025-09-10',
-        domain: 'Cybersecurity'
-      },
-       'AN106': {
-        name: 'Pawan Singh',
-        issueDate: '2025-09-18',
-        domain: 'Web Development'
-      },
-       'AN107': {
-        name: 'Shruti Gupta',
-        issueDate: '2025-09-22',
-        domain: 'Data Analytics'
-      }
-      // Add more interns here by copying the format above
-    };
-
-    // --- Original Verification Function (Unchanged) ---
-    function verifyCertificate() {
-      const inputId = document.getElementById('employeeIdInput').value.trim().toUpperCase();
-      const resultContainer = document.getElementById('resultContainer');
-      const errorContainer = document.getElementById('errorContainer');
-      
-      const internData = internDatabase[inputId];
-
-      if (internData) {
-        // Data found, display it
-        document.getElementById('internName').innerText = internData.name;
-        document.getElementById('internDomain').innerText = internData.domain;
-        document.getElementById('issueDate').innerText = internData.issueDate;
-        
-        resultContainer.classList.remove('hidden');
-        errorContainer.classList.add('hidden');
-      } else {
-        // Data not found, show error
-        resultContainer.classList.add('hidden');
-        errorContainer.classList.remove('hidden');
-      }
+    if (!id) {
+      if (errorMessage) errorMessage.innerText = 'Please enter the Intern ID.';
+      show(errorContainer);
+      return;
     }
 
-    // --- NEW: Mobile Menu Toggle Script ---
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
+    try {
+      const url = APPS_SCRIPT_URL + '?id=' + encodeURIComponent(id);
+      const resp = await fetch(url, { cache: 'no-store' });
+      if (!resp.ok) throw new Error('Network response not ok');
+      const data = await resp.json();
 
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    });
-  </script>
+      if (data.found) {
+        el('internName').innerText = data.name || '—';
+        el('internDomain').innerText = data.domain || '—';
+        el('issueDate').innerText = data.issue_date || '—';
+        el('status').innerText = data.status || 'valid';
 
-</body>
-</html>
+        el('resultTitle').innerText = data.status === 'revoked' ? 'Certificate Revoked ⚠️' : 'Verification Successful ✅';
+        show(resultContainer);
+      } else if (data.error) {
+        if (errorMessage) errorMessage.innerText = 'Verification service error: ' + data.error;
+        show(errorContainer);
+      } else {
+        if (errorMessage) errorMessage.innerText = 'Verification Failed. The Certificate ID was not found.';
+        show(errorContainer);
+      }
+    } catch (err) {
+      console.error(err);
+      if (errorMessage) errorMessage.innerText = 'Error contacting verification service. Please try again later.';
+      show(errorContainer);
+    }
+  }
 
+  // Auto-fetch if ?id= in URL (for QR links) and mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuButton) menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+    const verifyBtn = document.getElementById('verifyBtn') || document.querySelector('button[onclick="verifyCertificate()"]');
+    if (verifyBtn) verifyBtn.addEventListener('click', verifyCertificate);
 
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (id) {
+      el('employeeIdInput').value = id;
+      setTimeout(() => verifyCertificate(), 200);
+    }
+  });
+</script>
 
