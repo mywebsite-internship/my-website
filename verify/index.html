@@ -59,7 +59,6 @@
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <input type="text" id="intern_id" placeholder="Enter Intern ID" class="w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-        
         <button id="verifyBtn" class="bg-green-600 text-white px-8 py-2 rounded-md hover:bg-green-700 transition font-semibold">Verify</button>
       </div>
 
@@ -91,6 +90,8 @@
       </div>
     </div>
   </main>
+
+
   <footer class="bg-gray-800 text-white text-center py-4 mt-12">
     <p>&copy; 2025 Algonive. All rights reserved.</p>
   </footer>
@@ -104,22 +105,44 @@
   const show = elNode => elNode.classList.remove('hidden');
   const hide = elNode => elNode.classList.add('hidden');
 
+  /**
+   * NEW FUNCTION: Formats a date string into "3 November 2025" format
+   */
+  function formatDate(dateString) {
+    if (!dateString) {
+      return '—';
+    }
+    try {
+      const dateObj = new Date(dateString);
+      if (isNaN(dateObj.getTime())) {
+        return dateString; // Return original text if not a valid date
+      }
+      
+      // Use 'UTC' timezone to prevent off-by-one day errors
+      const options = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' };
+      
+      return dateObj.toLocaleDateString('en-GB', options);
+      
+    } catch (e) {
+      console.error("Error formatting date:", e);
+      return dateString; // Fallback to original text
+    }
+  }
+
+
   async function verifyCertificate() {
-    // FIXED: Corrected ID to 'intern_id'
     const inputEl = el('intern_id');
     const idRaw = inputEl.value.trim();
     const id = idRaw.toUpperCase();
     
     const resultContainer = el('resultContainer');
     const errorContainer = el('errorContainer');
-    
-    // FIXED: Corrected ID to 'errorMessage'
     const errorMessage = el('errorMessage');
 
     // clear previous
     hide(resultContainer);
     hide(errorContainer);
-    if (errorMessage) errorMessage.innerText = ''; // Clear previous error text
+    if (errorMessage) errorMessage.innerText = ''; 
 
     if (!id) {
       if (errorMessage) errorMessage.innerText = 'Please enter the Intern ID.';
@@ -134,16 +157,16 @@
       const data = await resp.json();
 
       if (data.found) {
-        // FIXED: Corrected all element IDs to match the HTML
         el('name').innerText = data.name || '—';
         el('domain').innerText = data.domain || '—';
-        el('issue_date').innerText = data.issue_date || '—';
         
-        // FIXED: Handle status text and title
+        // --- THIS IS THE UPDATED LINE ---
+        el('issue_date').innerText = formatDate(data.issue_date);
+        // --- END OF UPDATE ---
+        
         const statusText = data.status || 'valid';
-        el('status').innerText = statusText.charAt(0).toUpperCase() + statusText.slice(1); // Capitalize (e.g., "Valid")
+        el('status').innerText = statusText.charAt(0).toUpperCase() + statusText.slice(1); 
 
-        // FIXED: Corrected title ID and logic
         const resultTitle = el('resultTitle');
         if (statusText === 'revoked') {
           resultTitle.innerText = 'Certificate Revoked ⚠️';
@@ -180,7 +203,7 @@
       menuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
 
-    // FIXED: Correct button ID to attach listener
+    // Attach listener to verify button
     const verifyBtn = document.getElementById('verifyBtn');
     if (verifyBtn) {
       verifyBtn.addEventListener('click', verifyCertificate);
@@ -196,7 +219,7 @@
         });
     }
 
-    // FIXED: Corrected ID to 'intern_id'
+    // Auto-fetch if ID in URL
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     if (id) {
@@ -205,5 +228,6 @@
     }
   });
 </script>
+
 </body>
 </html>
